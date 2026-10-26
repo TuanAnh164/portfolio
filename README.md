@@ -1,36 +1,36 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio — Trần Tuấn Anh
 
-## Getting Started
+Personal developer portfolio built with Next.js 16 (App Router), React 19, TypeScript and Tailwind CSS 4. Bilingual (Vietnamese / English) via `/vi` and `/en` routes.
 
-First, run the development server:
+## Run locally
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev      # http://localhost:3000 → redirects to /vi (or /en for English browsers)
+npm run build    # production build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Where to edit things
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| What | File |
+|---|---|
+| Name, intro, contact, skills, experience, projects, "Uses" | `src/content/profile.ts` |
+| UI labels (buttons, section titles) | `src/content/ui.ts` |
+| Terminal commands | `src/components/terminal.tsx` |
+| Colors / theme | `src/app/globals.css` (`:root` tokens) |
+| Avatar, CV, project screenshots | `public/avatar.png`, `public/cv/`, `public/projects/` |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Blog
 
-## Learn More
+Posts are Markdown files in `content/blog/<slug>/vi.md` and `en.md`.
+Copy `content/blog/_template` to a new folder (name must not start with `_`), edit the frontmatter and remove `draft: true`.
 
-To learn more about Next.js, take a look at the following resources:
+## GitHub activity
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The contribution heatmap and stats for `TuanAnh164` are fetched at build time and refreshed every 6 hours (ISR). If the APIs are unreachable the section shows a fallback message.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Deploy (Vercel)
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Push this folder to a GitHub repo.
+2. Import it at vercel.com → New Project (no settings needed).
+3. Optional: set `NEXT_PUBLIC_SITE_URL` to your custom domain for correct social preview links.
