@@ -9,19 +9,19 @@ import { ThemeSwitch } from "./theme-switch";
 export function Header({ lang }: { lang: Locale }) {
   const t = getDictionary(lang);
   const links = [
-    { href: `/${lang}#about`, label: t.nav.about },
-    { href: `/${lang}#skills`, label: t.nav.skills },
-    { href: `/${lang}#projects`, label: t.nav.projects },
-    { href: `/${lang}#experience`, label: t.nav.experience },
-    { href: `/${lang}#terminal`, label: t.nav.terminal },
-    { href: `/${lang}/blog`, label: t.nav.blog },
-    { href: `/${lang}/uses`, label: t.nav.uses },
+    { href: "/#about", label: t.nav.about },
+    { href: "/#skills", label: t.nav.skills },
+    { href: "/#projects", label: t.nav.projects },
+    { href: "/#experience", label: t.nav.experience },
+    { href: "/#terminal", label: t.nav.terminal },
+    { href: "/blog", label: t.nav.blog },
+    { href: "/uses", label: t.nav.uses },
   ];
 
   return (
     <header className="sticky top-0 z-40 border-b border-line/70 bg-bg/80 backdrop-blur-md animate-header-enter">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4 sm:px-6">
-        <Link href={`/${lang}`} className="font-mono text-sm font-semibold tracking-tight">
+        <Link href="/" className="font-mono text-sm font-semibold tracking-tight">
           <span className="text-accent">~/</span>
           {profile.handle}
           <span className="blink text-accent">_</span>

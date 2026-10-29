@@ -39,7 +39,7 @@ export default async function BlogIndex({ params }: PageProps<"/[lang]/blog">) {
           {posts.map((post) => (
             <li key={post.slug}>
               <Link
-                href={`/${lang}/blog/${post.slug}`}
+                href={`/blog/${post.slug}`}
                 className="block rounded-xl border border-line bg-surface p-6 transition-colors hover:border-accent/40"
               >
                 <p className="font-mono text-xs text-muted">

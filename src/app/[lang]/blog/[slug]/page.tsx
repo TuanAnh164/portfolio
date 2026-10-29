@@ -28,7 +28,7 @@ export default async function BlogPost({ params }: PageProps<"/[lang]/blog/[slug
 
   return (
     <article className="mx-auto max-w-3xl px-4 py-20 sm:px-6">
-      <Link href={`/${lang}/blog`} className="font-mono text-sm text-muted hover:text-accent">
+      <Link href={"/blog"} className="font-mono text-sm text-muted hover:text-accent">
         {t.blog.back}
       </Link>
       <p className="mt-8 font-mono text-xs text-muted">

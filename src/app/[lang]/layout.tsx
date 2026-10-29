@@ -38,7 +38,6 @@ export async function generateMetadata({ params }: LayoutProps<"/[lang]">): Prom
       template: `%s · ${profile.name}`,
     },
     description: profile.tagline[lang],
-    alternates: { languages: { vi: "/vi", en: "/en" } },
     openGraph: {
       title: `${profile.name} — ${profile.role[lang]}`,
       description: profile.tagline[lang],

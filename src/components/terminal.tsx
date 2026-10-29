@@ -195,11 +195,11 @@ export function Terminal({ lang }: { lang: Locale }) {
       }
       case "blog":
         push(<M>{c.opening}</M>);
-        router.push(`/${lang}/blog`);
+        router.push("/blog");
         break;
       case "lang": {
         const target = args[0] === "en" || args[0] === "vi" ? args[0] : lang === "vi" ? "en" : "vi";
-        router.push(`/${target}#terminal`);
+        document.cookie = `portfolio_lang=${target}; path=/; max-age=31536000; SameSite=Lax`; try { localStorage.setItem("portfolio-lang", target); } catch {} window.location.reload();
         break;
       }
       case "date":
