@@ -4,6 +4,7 @@ import { Contact } from "@/components/contact";
 import { Experience } from "@/components/experience";
 import { GithubActivity } from "@/components/github-activity";
 import { Hero } from "@/components/hero";
+import { MarqueeStrip } from "@/components/marquee-strip";
 import { Projects } from "@/components/projects";
 import { Section } from "@/components/section";
 import { Skills } from "@/components/skills";
@@ -19,6 +20,7 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
   return (
     <>
       <Hero lang={lang} />
+      <MarqueeStrip />
       <About lang={lang} />
       <Skills lang={lang} />
       <Projects lang={lang} />

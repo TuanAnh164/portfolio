@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState, type KeyboardEvent, type ReactNode } from "react";
 import { experience, learning, profile, projects, skillLevel, skills } from "@/content/profile";
 import type { Locale } from "@/lib/i18n";
+import { fireCelebration, fireConfetti } from "@/lib/confetti";
 
 type Line = { id: number; node: ReactNode };
 
@@ -93,7 +94,7 @@ export function Terminal({ lang }: { lang: Locale }) {
     const name = cmd.toLowerCase();
     push(
       <span>
-        <A>➜</A> <B>~</B> {raw}
+        <A>❯</A> <B>~</B> {raw}
       </span>,
     );
     if (!name) return;
@@ -163,6 +164,7 @@ export function Terminal({ lang }: { lang: Locale }) {
         );
         break;
       case "contact":
+        fireConfetti({ particleCount: 40, spread: 55 });
         push(
           <span>
             <A>email   </A> {profile.contact.email}
@@ -183,6 +185,7 @@ export function Terminal({ lang }: { lang: Locale }) {
         window.open(profile.contact.github, "_blank", "noopener");
         break;
       case "cv": {
+        fireCelebration();
         push(<M>{c.downloading}</M>);
         const a = document.createElement("a");
         a.href = profile.cv;
@@ -209,6 +212,7 @@ export function Terminal({ lang }: { lang: Locale }) {
         setLines([]);
         break;
       case "sudo":
+        fireConfetti({ colors: ["#fbbf24", "#f87171"] });
         push(<span className="text-warn">{c.sudo}</span>);
         break;
       default:
@@ -246,7 +250,7 @@ export function Terminal({ lang }: { lang: Locale }) {
 
   return (
     <div
-      className="overflow-hidden rounded-xl border border-line bg-[#0a0d12] shadow-2xl shadow-black/40"
+      className="overflow-hidden rounded-xl border border-line bg-[#0a0d12] shadow-xl shadow-slate-900/10 dark:shadow-2xl dark:shadow-black/40"
       onClick={() => inputRef.current?.focus()}
     >
       <div className="flex items-center gap-2 border-b border-line bg-surface-2 px-4 py-3">
@@ -269,7 +273,7 @@ export function Terminal({ lang }: { lang: Locale }) {
         ))}
         <label className="flex items-center gap-2">
           <span aria-hidden>
-            <A>➜</A> <B>~</B>
+            <A>❯</A> <B>~</B>
           </span>
           <span className="sr-only">Terminal command</span>
           <input
@@ -283,6 +287,12 @@ export function Terminal({ lang }: { lang: Locale }) {
             className="flex-1 bg-transparent text-text caret-accent outline-none"
             placeholder="help"
           />
+          {!input && (
+            <span
+              className="inline-block h-4 w-2 rounded-xs bg-accent animate-cursor-blink select-none"
+              aria-hidden="true"
+            />
+          )}
         </label>
       </div>
     </div>

@@ -4,6 +4,7 @@ import { getDictionary } from "@/content/ui";
 import type { Locale } from "@/lib/i18n";
 import { DownloadIcon, MenuIcon } from "./icons";
 import { LangSwitch } from "./lang-switch";
+import { ThemeSwitch } from "./theme-switch";
 
 export function Header({ lang }: { lang: Locale }) {
   const t = getDictionary(lang);
@@ -18,7 +19,7 @@ export function Header({ lang }: { lang: Locale }) {
   ];
 
   return (
-    <header className="sticky top-0 z-40 border-b border-line/70 bg-bg/80 backdrop-blur-md">
+    <header className="sticky top-0 z-40 border-b border-line/70 bg-bg/80 backdrop-blur-md animate-header-enter">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4 sm:px-6">
         <Link href={`/${lang}`} className="font-mono text-sm font-semibold tracking-tight">
           <span className="text-accent">~/</span>
@@ -39,6 +40,7 @@ export function Header({ lang }: { lang: Locale }) {
         </nav>
 
         <div className="flex items-center gap-2">
+          <ThemeSwitch />
           <LangSwitch lang={lang} />
           <a
             href={profile.cv}

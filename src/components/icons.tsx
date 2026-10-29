@@ -70,3 +70,16 @@ export const MenuIcon = (p: IconProps) => (
     <path d="M4 6h16M4 12h16M4 18h16" />
   </svg>
 );
+
+export const SunIcon = (p: IconProps) => (
+  <svg {...base} {...p}>
+    <circle cx="12" cy="12" r="4" />
+    <path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M6.34 17.66l-1.41 1.41m14.14-14.14-1.41 1.41" />
+  </svg>
+);
+
+export const MoonIcon = (p: IconProps) => (
+  <svg {...base} {...p}>
+    <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
+  </svg>
+);
