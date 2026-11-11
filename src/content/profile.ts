@@ -15,8 +15,8 @@ export const profile = {
   cv: "/cv/Tran-Tuan-Anh-CV.pdf",
   githubUser: "TuanAnh164",
   tagline: {
-    vi: "Mình xây sản phẩm web và mobile từ giao diện đến API — gọn, rõ ràng và chạy được thật.",
-    en: "I build web and mobile products end to end, from the interface to the API — clean, clear and actually shipped.",
+    vi: "Mình xây sản phẩm web và mobile từ giao diện đến API — gọn, rõ ràng.",
+    en: "I build web and mobile products end to end, from the interface to the API — clean, clear.",
   } satisfies L,
   about: [
     {
