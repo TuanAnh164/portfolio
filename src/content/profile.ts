@@ -204,33 +204,6 @@ export const projects: Project[] = [
     meta: { vi: "63 commit — nhiều nhất nhóm", en: "63 commits — most on the team" },
   },
   {
-    name: "HabitFlow",
-    period: "2026",
-    role: { vi: "Cá nhân · Đồ án MMA", en: "Solo · MMA project" },
-    summary: {
-      vi: "Ứng dụng mobile xây thói quen với AI coach: theo dõi thói quen hằng ngày, thống kê, lịch heatmap, gamification (XP, level, huy hiệu) và nhắc nhở thông minh.",
-      en: "A mobile habit-building app with an AI coach: daily habit tracking, statistics, a heatmap calendar, gamification (XP, levels, badges) and smart reminders.",
-    },
-    highlights: [
-      {
-        vi: "App Expo + React Native: Expo Router, NativeWind, React Query, Zustand, animation với Reanimated / Lottie.",
-        en: "Expo + React Native app: Expo Router, NativeWind, React Query, Zustand, animations with Reanimated / Lottie.",
-      },
-      {
-        vi: "Đăng nhập Google, onboarding 4 bước, chat với AI coach và push notification.",
-        en: "Google sign-in, 4-step onboarding, AI coach chat and push notifications.",
-      },
-      {
-        vi: "Back-end NestJS + MongoDB (11 module, JWT / Passport, cron job, Swagger), gợi ý thói quen bằng OpenAI có cache 24 giờ.",
-        en: "NestJS + MongoDB back-end (11 modules, JWT / Passport, cron jobs, Swagger), OpenAI habit suggestions with a 24-hour cache.",
-      },
-    ],
-    stack: ["React Native", "Expo", "TypeScript", "NativeWind", "React Query", "Zustand", "NestJS", "MongoDB", "OpenAI"],
-    logo: "/projects/habitflow-flo.png",
-    links: [],
-    meta: { vi: "Tự làm toàn bộ: app mobile + back-end", en: "Built solo: mobile app + back-end" },
-  },
-  {
     name: "KUL Local",
     period: "05/2025 — 08/2025",
     role: { vi: "Front-end Developer · Đồ án SWP", en: "Front-end Developer · SWP project" },
